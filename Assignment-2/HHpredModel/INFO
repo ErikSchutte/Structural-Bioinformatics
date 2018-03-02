@@ -1,0 +1,50 @@
+* 1. Get Target sequence from CASP (chosen target: T0822, http://predictioncenter.org/casp12/target.cgi?id=27&view=all).
+* 2. Homology detection of target, acquired template sequence (chosen template: 5G3Q, https://www.rcsb.org/structure/5G3Q).
+* 3. Get the '*.pdb' file for 5G3Q (https://files.rcsb.org/download/5G3Q.pdb).
+* 4. Create an alignment file (PIR) for MODELLER obtained from the homology detection, result below:
+
+>P1;UKNP
+sequence:UKNP:1    :A:89  :A::::
+SMTSRPKLRILNVSNKGDRVVECQLETHNRKMVTFKFDLDGDNPEEIATIMVNNDFILAIERESFVDQVREIIEKADEMLSEDVSVEPE*
+>P1;5G3Q
+structure:5G3Q:1   :A:89  :A::HOMO SAPIENS:1.613:
+SMTSRPKLRILNVSNKGDRVVECQLETHNRKMVTFKFDLDGDNPEEIATIMVNNDFILAIERESFVDQVREIIEKADEMLSEDVSVEPE*
+
+* 5. Update the alignment file (PIR) so it aligns with the pdb file of our template, i.e. positions of residues is important!
+
+>P1;5G3Q
+structure:5G3Q:1113   :A:1201  :A::HOMO SAPIENS:1.613:
+SMTSRPKLRILNVSNKGDRVVECQLETHNRKMVTFKFDLDGDNPEEIATIMVNNDFILAIERESFVDQVREIIEKADEMLSEDVSVEPE*
+>P1;T0882
+sequence:T0882:1    :A:89  :A::::
+SMTSRPKLRILNVSNKGDRVVECQLETHNRKMVTFKFDLDGDNPEEIATIMVNNDFILAIERESFVDQVREIIEKADEMLSEDVSVEPE*
+
+* 6. Create a python script that fits multiple models, code below:
+
+#!/usr/bin/env python
+from modeller import *
+from modeller.automodel import *
+
+env = environ()
+
+a = automodel(env,
+	alnfile='template-5G3Q.ali',
+	knowns='5G3Q',
+	sequence='T0882',
+	assess_methods=(assess.DOPE, assess.GA341))
+
+a.starting_model = 1
+a.ending_model = 5
+a.make()
+
+* 7. Asss MODELLER output:
+
+>> Summary of successfully produced models:
+Filename                          molpdf     DOPE score    GA341 score
+----------------------------------------------------------------------
+T0882.B99990001.pdb            522.33051    -8496.99707        1.00000
+T0882.B99990002.pdb            401.62292    -8765.47168        1.00000
+T0882.B99990003.pdb            454.82211    -8605.88184        1.00000
+T0882.B99990004.pdb            394.49939    -8693.28711        1.00000
+T0882.B99990005.pdb            451.19211    -8746.41797        1.00000
+
