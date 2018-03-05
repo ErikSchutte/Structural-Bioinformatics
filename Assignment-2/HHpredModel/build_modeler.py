@@ -5,8 +5,8 @@ from modeller.automodel import *
 env = environ()
 
 a = automodel(env,
-	alnfile='template-5G3Q.ali',
-	knowns='5G3Q',
+	alnfile='template-2LRU.ali',
+	knowns='2LRU',
 	sequence='T0882',
 	assess_methods=(assess.DOPE, assess.GA341))
 
