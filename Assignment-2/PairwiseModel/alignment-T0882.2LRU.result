@@ -1,0 +1,9 @@
+>lcl|PDB:2LRU_A mol:protein length:98  Serine/threonine-protein kinase WNK1
+Length=98
+
+ Score = 28.9 bits (63),  Expect = 1.6
+ Identities = 10/43 (23%), Positives = 25/43 (58%), Gaps = 0/43 (0%)
+
+Query  29  NRKMVTFKFDLDGDNPEEIATIMVNNDFILAIERESFVDQVRE  71
+           + + + F FDL+ D PE++A  MV + ++   + ++    +++
+Sbjct  44  DNEAIEFSFDLERDVPEDVAQEMVESGYVCEGDHKTMAKAIKD  86

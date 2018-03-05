@@ -1,0 +1,14 @@
+# Command used to run blastp for T0882:
+/nfs/public/ro/es/appbin/linux-x86_64/ncbi-blast-2.2.29+/bin/blastp
+ -db "pdb" 
+ -query ncbiblast-I20180304-142929-0833-38199880-pg.sequence
+ -num_threads 16
+ -outfmt 11
+ -out ncbiblast-I20180304-142929-0833-38199880-pg.archive
+ -matrix BLOSUM62
+ -num_alignments 50
+ -evalue 10
+ -gapopen 11
+ -gapextend 1
+ -seg no
+ -comp_based_stats F
