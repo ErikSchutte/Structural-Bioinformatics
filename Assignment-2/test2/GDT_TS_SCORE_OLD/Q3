@@ -1,0 +1,95 @@
+Global Distance Test (GDT) is a measure that can be used to asses the quality of
+protein structure predictions. Given a set of distance thresholds,
+GDT maximizes the percentage of superimposed (or matched) residue pairs under
+each threshold in each model and target, and reports the average of these
+percentages as the final score.
+
+The GDT score is calculated as the largest set of amino acid residues'
+alpha carbon atoms in the model structure falling within a defined distance
+cutoff of their position in the experimental structure
+
+
+Filename                         molpdf     DOPE score     GDT_TS
+-----------------------------------------------------------------
+T0882.B99990001.pdb           154.94730    -2355.23267     65.789
+T0882.B99990002.pdb           216.91116    -1825.13977     61.184
+T0882.B99990003.pdb           239.26064    -2023.76270     65.789
+T0882.B99990004.pdb           233.54941    -2247.65015     61.842
+T0882.B99990005.pdb           170.08553    -2222.13745     65.132
+
+In general, the higher GDT_TS is, the better a given model
+is in comparison to reference structure.
+
+
+Discrete Optimized Protein Energy (DOPE), is also used as a measure to
+assess homology models in protein structure prediction.
+The DOPE model score is designed for selecting the best structure from
+a collection of models built by MODELLER. The score is unnormalized
+with respect to the protein size and has an arbitrary scale, therefore
+scores from different proteins cannot be compared directly.
+
+GDT_TS = (GDT_P1 + GDT_P2 + GDT_P4 + GDT_P8)/4.0
+where GDT_Pn is an estimation of the percent of residues that can
+fit under distance cutoff <= n.0 Angstroms
+
+
+Root Mean Square Deviation (RMSD) is popularly used as a measure for
+ evaluating models (Arun et al., 1987). However, RMSD measure suffers
+ from a few drawbacks.
+
+First, the measure is likely to underestimate the quality of a model where
+most of the structure is accurately predicted, but the incorrectly
+predicted parts are very far from their correct positions.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3607910/
+
+
+
+
+In addition to the root
+mean squared deviation of the positions of the Ca atoms (Ca-RMSD)
+
+ Both measures are based on the global
+distance test (GDT), which determines the number of model-template Caatom
+pairs, G(v) that are within a distance threshold, v A˚ (39). Using GDT
+results, the GDT_TS score (40) is then calculated as the average percentage
+of residues that fit within four different cutoff distances:
+
+ When AL0 and GDT_TS scores are used, however,
+it is clear that the scores for the whole models are
+indeed significantly lower than the scores for the transmembrane
+regions (Fig. 2). This suggests that there is a marked
+structural variability in the connecting regions between
+membrane-spanning segments of topologically related proteins
+(i.e., with the same number of transmembrane domains
+and the same N- to C-terminal orientations), as indicated by
+the variability in their length and sequences.
+
+whereas the GDT_TS
+scores for the same regions are often below 100%, suggesting
+that the errors in the easier models are local deviations
+that might be removed given an effective refinement
+protocol.
+
+
+For the purpose of structure similarity search or ordering of models (or PDB templates),
+the target (frame of the reference, second molecule) should be fixed and then user may
+sort models (see SUMMARY results) by the number of superimposed residues N (under one
+selected DIST cutoff), or by the values of GDT_TS (average from four distance cutoffs),
+or LGA_S (weighted results from the full set of distance cutoffs). Let us notice that
+LGA_S can be used to evaluate the level of structure similarity between proteins in
+sequence dependent ("-3") mode as well as in structure alignment search ("-4") mode.
+The experiments show that LGA_S is slightly more sensitive and accurate in scoring
+structural similarity than GDT_TS.
+
+
+    GDT_TS = (GDT_P1 + GDT_P2 + GDT_P4 + GDT_P8)/4.0
+      where GDT_Pn is an estimation of the percent of residues that can
+      fit under distance cutoff <= n.0 Angstroms
+
+      ./lga model.target -3 -sda -d:4 -swap -gdc_sup:s1:s2 -gdc_set:s5:s6,s7:s8
+then the SUMMARY(GDT) results (GDT_TS, LGA_S3, N, ...) will be calculated as before
+(using all (in common) amino acids from both structures (model and target)), but the
+GDC results (Dist_max and GDC columns in LGA records, and SUMMARY(RMSD_GDC)) will be
+calculated for s5:s6,s7:s8 ranges only using the superposition created based on the
+amino acids from the range s1:s2.
