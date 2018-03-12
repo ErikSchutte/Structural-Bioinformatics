@@ -1,0 +1,6 @@
+>P1;UKNP
+sequence:UKNP:1    :A:74  :A::::
+--------------------------------VTFKFDLDGDNPEEIATIMVNNDFILAIERESFVDQVREIIE*
+>P1;2V3S
+structure:2V3S:19  :A:60  :A::HOMO SAPIENS:1.7:
+--------------------------------IRFEFTPGRDTAEGVSQELISAGLVDGRDLVIVAANLQKIVE*
