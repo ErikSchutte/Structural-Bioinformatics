@@ -1,0 +1,596 @@
+1VET-em_B.0.pdb
+1VET-em_A.0.pdb
+No input file 2:5:0.1 assuming it is numeric range
+Obtained 31 distances: ['2.0', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9', '3.0', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9', '5.0']
+Link ../1VET-em.pdb 1VET-em.pdb
+Found pdb files ['1VET-em_B.0.pdb', '1VET-em_A.0.pdb']
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/atom2cg.awk ['1VET-em_A.0.pdb'] None 1VET-em_A.0_cg.pdb
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/dsspcmbi ['1VET-em_A.0.pdb', '1VET-em_A.0.dssp'] None dsspcmbi.err
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/seq2itp.pl ['-s 1VET-em_A.0.fasta', '-2 1VET-em_A.0.ssd', '-t 1VET-em_A.0_raw.itp'] None None
+Read 935 from 1VET-em_A.0_raw.itp
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/atom2cg.awk ['1VET-em_B.0.pdb'] None 1VET-em_B.0_cg.pdb
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/dsspcmbi ['1VET-em_B.0.pdb', '1VET-em_B.0.dssp'] None dsspcmbi.err
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/seq2itp.pl ['-s 1VET-em_B.0.fasta', '-2 1VET-em_B.0.ssd', '-t 1VET-em_B.0_raw.itp'] None None
+Read 852 from 1VET-em_B.0_raw.itp
+Starting merge: 1VET-em ['A', 'B']
+Merging ['1VET-em_A.0.pdb', '1VET-em_A.0_cg.pdb', '1VET-em_B.0.pdb', '1VET-em_B.0_cg.pdb']
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/atom2cg.awk ['1VET-em_A.pdb'] None 1VET-em_A_cg.pdb
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/atom2cg.awk ['1VET-em_B.pdb'] None 1VET-em_B_cg.pdb
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/dsspcmbi ['1VET-em_A.pdb', '1VET-em_A.dssp'] None dsspcmbi.err
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/dsspcmbi ['1VET-em_B.pdb', '1VET-em_B.dssp'] None dsspcmbi.err
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/seq2itp.pl ['-s 1VET-em_A.fasta', '-2 1VET-em_A.ssd', '-t 1VET-em_A_raw.itp'] None None
+Read 935 from 1VET-em_A_raw.itp
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/seq2itp.pl ['-s 1VET-em_B.fasta', '-2 1VET-em_B.ssd', '-t 1VET-em_B_raw.itp'] None None
+Read 852 from 1VET-em_B_raw.itp
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_A_cg.pdb', '-o 1VET-em_A_cg.gro'] None editconf.err
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_B_cg.pdb', '-o 1VET-em_B_cg.gro'] None editconf.err
+/usr/local/gromacs/4.6.7/bin/make_ndx ['-f 1VET-em_cg.gro', '-o tmp.ndx'] ['q'] make_ndx.err
+/usr/local/gromacs/4.6.7/bin/make_ndx ['-f 1VET-em_cg.gro', '-o 1VET-em_cg.ndx'] ['"Protein" & a 1-265', 'name 10 1VET-em_A', '"1VET-em_A" & a B*', 'name 11 1VET-em_A_backbone', '"Protein" & a 266-505', 'name 12 1VET-em_B', '"1VET-em_B" & a B*', 'name 13 1VET-em_B_backbone', 'q'] make_ndx.err
+/usr/local/gromacs/4.6.7/bin/genrestr ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx', '-constr', '-o 1VET-em_A_backbone_restr.itp'] ['11'] genrestr.err
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/select_restr.pl ['1VET-em_A_backbone_restr.itp 0.5 0.9 500'] None 1VET-em_A_backbone_addElBnds.itp
+Read 935 from 1VET-em_A.itp
+Read 604 from 1VET-em_A_backbone_addElBnds.itp
+/usr/local/gromacs/4.6.7/bin/genrestr ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx', '-constr', '-o 1VET-em_B_backbone_restr_raw.itp'] ['13'] genrestr.err
+Read 6907 from 1VET-em_B_backbone_restr_raw.itp
+/home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/lib/select_restr.pl ['1VET-em_B_backbone_restr.itp 0.5 0.9 500'] None 1VET-em_B_backbone_addElBnds.itp
+Read 852 from 1VET-em_B.itp
+Read 574 from 1VET-em_B_backbone_addElBnds.itp
+After CG2FG got output files: 1VET-em_cg.gro 1VET-em_cg.ndx ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] ['1VET-em_A_cg.gro', '1VET-em_B_cg.gro'] [265, 240] ['1VET-em_A.pdb', '1VET-em_B.pdb']
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.0.gro', '-o 1VET-em_cg_d2.0_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.0_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.0_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.0_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.0/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.1.gro', '-o 1VET-em_cg_d2.1_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.1_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.1_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.1_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.1/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.2.gro', '-o 1VET-em_cg_d2.2_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.2_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.2_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.2_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.2/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.3.gro', '-o 1VET-em_cg_d2.3_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.3_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.3_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.3_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.3/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.4.gro', '-o 1VET-em_cg_d2.4_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.4_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.4_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.4_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.4/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.5.gro', '-o 1VET-em_cg_d2.5_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.5_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.5_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.5_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.5/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.6.gro', '-o 1VET-em_cg_d2.6_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.6_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.6_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.6_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.6/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.7.gro', '-o 1VET-em_cg_d2.7_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.7_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.7_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.7_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.7/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.8.gro', '-o 1VET-em_cg_d2.8_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.8_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.8_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.8_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.8/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d2.9.gro', '-o 1VET-em_cg_d2.9_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d2.9_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d2.9_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d2.9_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d2.9/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.0.gro', '-o 1VET-em_cg_d3.0_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.0_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.0_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.0_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.0/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.1.gro', '-o 1VET-em_cg_d3.1_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.1_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.1_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.1_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.1/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.2.gro', '-o 1VET-em_cg_d3.2_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.2_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.2_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.2_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.2/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.3.gro', '-o 1VET-em_cg_d3.3_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.3_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.3_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.3_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.3/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.4.gro', '-o 1VET-em_cg_d3.4_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.4_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.4_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.4_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.4/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.5.gro', '-o 1VET-em_cg_d3.5_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.5_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.5_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.5_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.5/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.6.gro', '-o 1VET-em_cg_d3.6_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.6_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.6_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.6_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.6/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.7.gro', '-o 1VET-em_cg_d3.7_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.7_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.7_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.7_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.7/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.8.gro', '-o 1VET-em_cg_d3.8_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.8_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.8_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.8_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.8/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d3.9.gro', '-o 1VET-em_cg_d3.9_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d3.9_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d3.9_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d3.9_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d3.9/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.0.gro', '-o 1VET-em_cg_d4.0_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.0_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.0_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.0_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.0/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.1.gro', '-o 1VET-em_cg_d4.1_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.1_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.1_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.1_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.1/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.2.gro', '-o 1VET-em_cg_d4.2_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.2_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.2_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.2_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.2/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.3.gro', '-o 1VET-em_cg_d4.3_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.3_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.3_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.3_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.3/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.4.gro', '-o 1VET-em_cg_d4.4_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.4_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.4_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.4_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.4/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.5.gro', '-o 1VET-em_cg_d4.5_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.5_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.5_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.5_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.5/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.6.gro', '-o 1VET-em_cg_d4.6_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.6_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.6_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.6_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.6/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.7.gro', '-o 1VET-em_cg_d4.7_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.7_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.7_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.7_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.7/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.8.gro', '-o 1VET-em_cg_d4.8_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.8_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.8_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.8_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.8/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d4.9.gro', '-o 1VET-em_cg_d4.9_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d4.9_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d4.9_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d4.9_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d4.9/em_vac
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.gro ./1VET-em_cg.gro
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_cg.ndx ./1VET-em_cg.ndx
+/usr/local/gromacs/4.6.7/bin/g_mindist ['-f 1VET-em_cg.gro', '-n 1VET-em_cg.ndx'] ['10', '12'] mindist.err 
+/usr/local/gromacs/4.6.7/bin/editconf ['-f 1VET-em_cg_d5.0.gro', '-o 1VET-em_cg_d5.0_cntr.gro', '-bt dodecahedron', '-c', '-princ', '-d 1.3538403'] ['0'] editconf.err
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+/usr/local/gromacs/4.6.7/bin/genbox ['-cp 1VET-em_cg_d5.0_cntr.gro', '-ci /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/structures/na+.gro', '-nmol 1', '-try 1000', '-vdwd 0.19', '-o 1VET-em_cg_d5.0_cntr_neutral.gro'] None genbox.err
+Link ../1VET-em_cg_d5.0_cntr_neutral.gro conf.gro
+Link ../../1VET-em_A_w_elbnds.itp ./1VET-em_A_w_elbnds.itp
+Link ../../1VET-em_B_w_elbnds.itp ./1VET-em_B_w_elbnds.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.1.itp martini_v2.1.itp
+Link /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/MFF/FF/martini_v2.0_ions.itp martini_v2.0_ions.itp
+Including martini*.itp
+Including ['1VET-em_A_w_elbnds.itp', '1VET-em_B_w_elbnds.itp'] []
+/usr/local/gromacs/4.6.7/bin/grompp ['-f em.mdp', '-c conf.gro', '-p cg.top', '-maxwarn 1'] None grompp.err
+Failed: 65280
+$ /usr/local/gromacs/4.6.7/bin/grompp -f em.mdp -c conf.gro -p cg.top -maxwarn 1 > grompp.err 2>&1
+pullsim failed in /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/PPI/1VET-em/d5.0/em_vac

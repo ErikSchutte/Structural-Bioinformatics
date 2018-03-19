@@ -1,0 +1,48 @@
+;
+; em.mdp
+; Generated automatically by: /home/ese690/Desktop/Structural-Bioinformatics/Assignment-3/pmf_prak_dist/src/MDP.pyc
+; User: ese690
+; Date: 2018-03-19
+; Time: 13:31:59.849607
+;
+
+; Preprocessing options:
+cpp			= /lib/cpp
+title			= em
+
+; Run control parameters:
+nstcomm			= 1
+comm_grps		= System
+emstep			= 0.01
+integrator		= steep
+dt			= 0.002
+em_tol			= 550
+nsteps			= 10000
+tinit			= 0.0
+
+; Output control options:
+nstxtcout		= 100
+nstxout			= 100
+nstvout			= 100
+nstlog			= 100
+nstenergy		= 100
+energygrps		= System
+
+; Neighborsearching parameters:
+rlist			= 1.2
+
+; Options for electrostatics and vdw:
+vdw_type		= shift
+coulombtype		= shift
+epsilon_r		= 15
+fourier_nz		= 10
+rcoulomb		= 1.2
+fourier_nx		= 10
+rvdw_switch		= 0.9
+fourier_ny		= 10
+rvdw			= 1.2
+
+; Options for weak coupling algorithms:
+tcoupl			= no
+Pcoupl			= no
+
