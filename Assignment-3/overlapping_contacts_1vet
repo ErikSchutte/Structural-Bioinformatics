@@ -1,0 +1,20 @@
+Allowed overlap: 0.6
+H-bond overlap reduction: 0.4
+Ignore contacts between atoms separated by 4 bonds or less
+Detect intra-residue contacts: False
+Detect intra-molecule contacts: True
+
+12 contacts
+atom1  atom2  overlap  distance
+HOH 251.A O   PRO 41.A CB    0.834  2.506
+THR 57.A CG2  ASN 68.A OD1   0.734  2.566
+HOH 209.B O   VAL 99.B CG1   0.710  2.630
+MET 103.B CB  HOH 209.B O    0.703  2.637
+ALA 54.B CA   ARG 58.B NH2   0.700  2.820
+HOH 235.A O   LYS 119.A CB   0.677  2.663
+LEU 31.B CG   HOH 233.B O    0.662  2.678
+HOH 171.A O   ILE 118.A CG1  0.632  2.708
+ASP 57.B CB   ARG 58.B NH2   0.619  2.901
+HOH 226.B O   LEU 63.A CD2   0.609  2.731
+LEU 5.A CD2   LEU 9.A CD1    0.607  3.153
+HOH 141.A O   HIS 20.A CD2   0.604  2.616
