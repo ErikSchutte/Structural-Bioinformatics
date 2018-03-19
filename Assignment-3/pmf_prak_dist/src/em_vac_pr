@@ -1,0 +1,34 @@
+    # vacuum energy minimization using position restraints
+    em_vac_posre_dir = os.getcwd()+'/em_vac_posre'
+    if (not (os.path.exists(em_vac_posre_dir) and
+	     os.path.isdir(em_vac_posre_dir))):
+        os.mkdir(em_vac_posre_dir)
+    os.chdir(em_vac_posre_dir)
+    conf    = 'conf.gro'
+    confout = 'confout.gro'
+    ot.symlink(em_vac_dir+'/'+confout,'./'+conf)
+    mdpfile = mdp.generate_mdp('em_posre')
+    for file in cg_stable_itppair:
+        ot.symlink('../../'+file,'./'+file)
+    ot.symlink(env.mffFF+'/'+env.mffitp,'./'+env.mffitp)
+    ot.symlink(env.mffFF+'/'+env.mffions,'./'+env.mffions)
+    ot.symlink('../../'+cgndx_merged,'./'+cgndx_merged)
+    posrepair = st.gen_posre(cgndx_merged,conf,groups,nat_cgpair)
+    topfile   = top.generate_top('cg_posre',pdbase,cg_stable_itppair,
+				 fgpair,conf,posrepair)
+    ifacelist = []
+    ifacelist.append('-f '+mdpfile)
+    ifacelist.append('-c '+conf)
+    ifacelist.append('-p '+topfile)
+    ifacelist.append('-maxwarn 1')
+    ifacelist.append('> grompp.err 2>&1')
+    result = gmx.g_grompp(ifacelist)
+    if result: return result
+    ifacelist[:] = []
+    ifacelist.append('-s topol.tpr')
+    ifacelist.append('> md.err 2>&1')
+    result = gmx.g_mdrun(ifacelist)
+    if result: return result
+    del ifacelist
+    os.chdir(d_dir)
+

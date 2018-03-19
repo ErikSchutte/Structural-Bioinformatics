@@ -1,0 +1,41 @@
+    # solvate structure with cg water
+    solvate_dir =  os.getcwd()+'/solvate'
+    if (not (os.path.exists(solvate_dir) and
+	     os.path.isdir(solvate_dir))):
+        os.mkdir(solvate_dir)
+    os.chdir(solvate_dir)
+    conf    = 'conf.gro'
+    confout = 'confout.gro'
+    ot.symlink(em_vac_posre_dir+'/'+confout,'./'+conf)
+    ifacelist = ['-cp '+conf]
+    ifacelist.append('-cs '+env.mffstruct+'/water.gro')
+    ifacelist.append('-vdwd 0.19')
+    ifacelist.append('> genbox.err 2>&1')
+    result = gmx.g_genbox(ifacelist)
+    if result: return result
+    del ifacelist
+    # make a new ndx file of the solvated structure
+    out = 'out.gro'
+    ifacelist = ['-f '+out]
+    ifacelist.append('-o '+'tmp.ndx')
+    ifacelist.append('> make_ndx.err 2>&1')
+    ifacelist.append('<<EOF\n')
+    ifacelist.append('q\n')
+    ifacelist.append('EOF\n')
+    result = gmx.g_make_ndx(ifacelist)
+    if result: return result
+    del ifacelist
+    ngroups = st.ngroups_in_ndx('tmp.ndx')
+    os.remove('tmp.ndx')
+    ifacelist = ['-f '+out]
+    cgndx_sol = re.sub('.ndx','_sol.ndx',cgndx_merged)
+    ifacelist.append('-o '+cgndx_sol)
+    ifacelist.append('> make_ndx.err 2>&1')
+    ifacelist.append('<<EOF\n')
+    ifacelist.extend(gmx.gen_ndxUIlist(ngroups,gro_cgpair,nat_cgpair))
+    ifacelist.append('EOF\n')
+    result = gmx.g_make_ndx(ifacelist)
+    if result: return result
+    del ifacelist
+    os.chdir(d_dir)
+

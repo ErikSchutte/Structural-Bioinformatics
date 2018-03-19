@@ -1,0 +1,47 @@
+    # solution production md run
+    md_sol_prod_dir = os.getcwd()+'/md_sol_prod'
+    if (not (os.path.exists(md_sol_prod_dir) and
+	     os.path.isdir(md_sol_prod_dir))):
+        os.mkdir(md_sol_prod_dir)
+    os.chdir(md_sol_prod_dir)
+    conf    = 'conf.gro'
+    confout = 'confout.gro'
+    ot.symlink(md_sol_eq_dir+'/'+confout,'./'+conf)
+    ot.symlink(solvate_dir+'/'+cgndx_sol,'./'+cgndx_sol)
+    bbgroups = []
+    for group in groups:
+        bbgroups.append(group+'_backbone')
+    if pull=='cons':
+        mdpfile = mdp.generate_mdp('md_pull_prod',sdistance,bbgroups,
+				   nsteps=nsteps)
+    elif pull=='umbr':
+        mdpfile = mdp.generate_mdp('md_umbr_prod',sdistance,bbgroups,
+				   nsteps=nsteps)
+    del bbgroups
+    for file in cg_stable_itppair:
+        ot.symlink('../../'+file,'./'+file)
+    ot.symlink(env.mffFF+'/'+env.mffitp,'./'+env.mffitp)
+    ot.symlink(env.mffFF+'/'+env.mffions,'./'+env.mffions)
+    for file in posrepair:
+        ot.symlink(em_vac_posre_dir+'/'+file,'./'+file)
+    topfile   = top.generate_top('cg',pdbase,cg_stable_itppair,
+				 fgpair,conf,posrepair)
+    ifacelist = []
+    ifacelist.append('-f '+mdpfile)
+    ifacelist.append('-c '+conf)
+    ifacelist.append('-p '+topfile)
+    ifacelist.append('-n '+cgndx_sol)
+    ifacelist.append('-maxwarn 3')
+    ifacelist.append('> grompp.err 2>&1')
+    result = gmx.g_grompp(ifacelist)
+    if result: return result
+    ifacelist[:] = []
+    ifacelist.append('-s topol.tpr')
+    ifacelist.append('> md.err 2>&1')
+    if (not boRun):
+	print "Ready for production in", os.getcwd()
+	print "option list", ifacelist
+    else:
+	result = gmx.g_mdrun(ifacelist)
+	if result: return result
+    os.chdir(d_dir)

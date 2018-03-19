@@ -1,0 +1,18 @@
+for i in */md_sol_prod; do 
+    echo $i
+    awk '$1+0==$1{print $1, sqrt($5^2+$6^2+$7^2);next}{print}' $i/pullx.xvg > $i/dx.xvg
+done
+for i in pullx-files.dat pullf-files.dat tpr-files.dat; do
+    rm $i
+    touch $i
+done
+for i in d[0-9].[0-9]*; do
+    if [ -f $i/md_sol_prod/pullx.xvg ]; then 
+        for f in pullx pullf tpr; do
+            \ls $i/md_sol_prod/*$f* | grep -v \# >> $f-files.dat
+        done
+    fi
+done
+g_wham -it tpr-files.dat -if pullf-files.dat -zprof0 5.0 || exit
+xmgrace profile.xvg &
+xmgrace -nxy histo.xvg &

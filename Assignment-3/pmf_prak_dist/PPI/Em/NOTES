@@ -1,0 +1,10 @@
+NOTE 1 [file topol.top, line 45]:
+  System has non-zero total charge: -1.000001
+  Total charge should normally be an integer. See
+  http://www.gromacs.org/Documentation/Floating_Point_Arithmetic
+  for discussion on how close it should be to an integer.
+
+NOTE 2 [file minim.mdp]:
+  The optimal PME mesh load for parallel simulations is below 0.5
+  and for highly parallel simulations between 0.25 and 0.33,
+  for higher performance, increase the cut-off and the PME grid spacing.
